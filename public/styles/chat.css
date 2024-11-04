@@ -1,0 +1,27 @@
+.message {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 8px;
+    max-width: 80%;
+}
+
+.mine {
+    background-color: #daf7a6;
+    color: #333333;
+    align-self: flex-end;
+    text-align: right;
+}
+
+.other {
+    background-color: #e0e0e0;
+    color: #000000;
+    align-self: flex-start;
+    text-align: left;
+}
+
+.notification {
+    text-align: center;
+    color: #888888;
+    font-style: italic;
+    margin: 5px 0;
+}
