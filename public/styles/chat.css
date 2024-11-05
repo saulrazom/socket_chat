@@ -1,22 +1,74 @@
-.message {
+body{
+    background-color: #262626;
+    color: #FAFFFD;
+    font-family: 'Roboto', sans-serif;
+}
+
+.salas-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.salasButton{
+    background-color: #7E46FF;
+    color: #FAFFFD;
+    font-size: 1.5em;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.salasButton:hover{
+    background-color: #5a20e2;
+}
+
+.chat-container{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.messages {
+    background-color: #2E2D2D;
+    width: 60%;
     padding: 10px;
-    margin: 5px 0;
+    border-radius: 15px;
+    height: 400px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column; 
+
+}
+
+.message {
     border-radius: 8px;
-    max-width: 80%;
+    padding: 15px 15px;
+    width: 80%;
+    display: inline-block;
+    word-wrap: break-word; 
+    white-space: normal; 
 }
 
 .mine {
-    background-color: #daf7a6;
-    color: #333333;
-    align-self: flex-end;
-    text-align: right;
+    background-color: #7E46FF;
+    color: #FAFFFD;
+    align-self: flex-end; 
+    margin-bottom: 20px;
+
 }
 
 .other {
-    background-color: #e0e0e0;
-    color: #000000;
+    background-color: #343434;
+    color: #FAFFFD;
     align-self: flex-start;
     text-align: left;
+    margin-bottom: 20px;
 }
 
 .notification {
@@ -24,4 +76,43 @@
     color: #888888;
     font-style: italic;
     margin: 5px 0;
+}
+
+.send-container{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 20px;
+    gap: 10px; 
+}
+
+.message-input {
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    border: none;
+    border-radius: 15px;
+    width: 49%;
+    font-size: 1em;
+}
+
+.send-button{
+    background-color: #7E46FF;
+    color: #FAFFFD;
+    font-size: 1.5em;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+@media (max-width: 1000px) {
+    .messages {
+        width: 80%;
+    }
+    .send-container{
+        gap: 5px; 
+    }
 }
