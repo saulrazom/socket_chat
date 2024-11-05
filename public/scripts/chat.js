@@ -3,6 +3,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const socket = io('/');
     const messageInput = document.getElementById('message');
+    const sendButton = document.getElementById('trigger');
     const messagesContainer = document.getElementById('messages');  
     const roomId = window.location.href.split('/').pop();
     const username = localStorage.getItem('username');
@@ -27,22 +28,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Enviar
-    document.getElementById('trigger').addEventListener('click', () => {
+    sendButton.addEventListener('click', () => {
         const msg = messageInput.value.trim();
-        if (!msg) return;  // No mensajes vacíos
-
+        if (!msg) return;  // No enviar mensajes vacíos
+    
         const messageData = {
             username,
             room: roomId,
             text: msg,
             timestamp: new Date().toLocaleTimeString(),
         };
-
+    
         // Mandar mensaje a la sala
         socket.emit('sendMessage', messageData);
-
+    
         // Limpiar input
         messageInput.value = '';
+    });
+    
+    // Enviar mensaje al presionar "Enter" en el campo de entrada
+    messageInput?.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+            sendButton.click();
+            event.preventDefault(); // Evita salto de línea en el input
+        }
     });
 
     // Mostrar mensajes 
