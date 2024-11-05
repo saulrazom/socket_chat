@@ -8,13 +8,14 @@
     <script src="/socket.io/socket.io.js"></script>
 </head>
 <body>
-    <button id="salasButton" onclick="window.location.href='../'">Salas</button>
-    <h1>CHAT</h1>
-    <div>
-        <div id="messages"></div>
-        <div>
-            <input id="message" type="text">
-            <button id="trigger">Send</button>
+    <div class="salas-container">
+        <button class="salasButton" id="salasButton" onclick="window.location.href='../'">Regresar a salas</button>
+    </div>
+    <div class="chat-container">
+        <div class="messages" id="messages"></div>
+        <div class="send-container">
+            <input class="message-input" id="message" type="text">
+            <button class="send-button" id="trigger">Enviar</button>
         </div>
     </div>
     <script src="/scripts/chat.js"></script>
