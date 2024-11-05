@@ -16,7 +16,7 @@ app.get('/chat/:id', (_, res) => {
 });
 
 const server = app.listen(PORT, () => {
-    console.log(`Servidor escuchando en el puerto ${PORT}`);
+    console.log(`Servidor escuchando en el puerto  ${PORT}`);
 });
 
 const io = new Server(server);
